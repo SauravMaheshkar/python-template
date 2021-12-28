@@ -1,5 +1,5 @@
 # Use an alpine image
-FROM ubuntu:impish-20210928 AS builder
+FROM ubuntu:impish-20211102 AS builder
 
 # metainformation
 LABEL version="0.0.1"
@@ -47,7 +47,7 @@ RUN find /opt/venv/lib/ -follow -type f -name '*.a' -delete \
     && find /opt/venv/lib/ -name '__pycache__' | xargs rm -r
 
 # Runner Image
-FROM ubuntu:impish-20210928 AS runner
+FROM ubuntu:impish-20211102 AS runner
 RUN apt update && apt install -y --no-install-recommends \ 
 		python3 \
 		python3-pip \
