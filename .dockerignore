@@ -1,3 +1,5 @@
+.git
+
 **/__pycache__/
 **/*.ipynb_checkpoints
 **/*.egg-info
@@ -10,3 +12,5 @@ models/
 notebooks/
 
 **/.DS_Store
+README.md
+LICENSE
