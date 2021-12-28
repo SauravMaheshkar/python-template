@@ -18,12 +18,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		python3 \
 		python3-pip \
 		python3-dev \
-		python3-venv
+		python3-venv \
+		&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
-RUN pip3 install --no-cache-dir -U pip wheel setuptools
+RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel isort
 RUN CFLAGS="-g0 -Os -DNDEBUG -Wl,--strip-all -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib" \
 		pip3 install --no-cache-dir \
  		--compile \
@@ -51,7 +52,8 @@ RUN apt update && apt install -y --no-install-recommends \
 		python3 \
 		python3-pip \
 		python3-dev \
-		python3-venv
+		python3-venv \
+		&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
