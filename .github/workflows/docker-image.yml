@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag python-dev:$(date +%s)
-    - name: Scan the Docker image
-      run: docker scan python-dev:$(date +%s) --file=Dockerfile
+      run: |
+        docker build . --file Dockerfile --tag python-dev:$(date +%s)
+        docker scan python-dev:$(date +%s)
