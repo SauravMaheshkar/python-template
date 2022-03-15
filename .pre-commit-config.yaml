@@ -7,6 +7,8 @@ repos:
     -   id: trailing-whitespace
     -   id: check-yaml
     -   id: check-merge-conflict
+    -   id: check-json
+    -   id: requirements-txt-fixer
 -   repo: https://github.com/psf/black
     rev: 19.3b0
     hooks:
@@ -27,3 +29,18 @@ repos:
         additional_dependencies:
           - flake8-black>=0.1.1
         language_version: python3
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v2.31.0
+    hooks:
+      - id: pyupgrade
+        args: ["--py37-plus"]
+
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.7.1
+    hooks:
+      - id: reorder-python-imports
+        args: [--py37-plus, --add-import, 'from __future__ import annotations']
+-   repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v1.20.0
+    hooks:
+      - id: setup-cfg-fmt
