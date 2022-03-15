@@ -48,7 +48,7 @@ RUN find /opt/venv/lib/ -follow -type f -name '*.a' -delete \
 
 # Runner Image
 FROM ubuntu:impish-20220301 AS runner
-RUN apt update && apt install -y --no-install-recommends \ 
+RUN apt update && apt install -y --no-install-recommends \
 		python3 \
 		python3-pip \
 		python3-dev \
@@ -63,4 +63,3 @@ WORKDIR /home/user
 USER user
 
 ENTRYPOINT ["/bin/bash"]
-
