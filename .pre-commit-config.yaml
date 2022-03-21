@@ -9,6 +9,7 @@ repos:
     -   id: check-merge-conflict
     -   id: check-json
     -   id: requirements-txt-fixer
+    -   id: fix-encoding-pragma
 -   repo: https://github.com/psf/black
     rev: 19.3b0
     hooks:
