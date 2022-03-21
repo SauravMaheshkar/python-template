@@ -22,7 +22,7 @@ jobs:
             ${{ runner.os }}-buildx-
       - uses: docker/build-push-action@v2
         with:
-          context: "{{defaultContext}}:mysubdir"
+          context: .
           push: false
           tags: python-dev
           cache-from: type=local,src=/tmp/.buildx-cache
