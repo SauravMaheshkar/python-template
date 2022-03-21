@@ -24,6 +24,6 @@ jobs:
         with:
           context: "{{defaultContext}}:mysubdir"
           push: false
-          tags: python-dev:$(date +%s)
+          tags: python-dev
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
