@@ -1,6 +1,6 @@
 black==22.1.0
 flake8==4.0.1
-mypy==0.941
+mypy==0.942
 numpy==1.22.3
 pre-commit==2.17.0
 pytest==7.1.1
