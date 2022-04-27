@@ -1,4 +1,3 @@
-
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
@@ -9,39 +8,25 @@ repos:
     -   id: check-merge-conflict
     -   id: check-json
     -   id: requirements-txt-fixer
-    -   id: fix-encoding-pragma
 -   repo: https://github.com/psf/black
-    rev: 19.3b0
+    rev: 22.3.0
     hooks:
     -   id: black
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.790
+    hooks:
+    -   id: mypy
 -   repo: https://github.com/pycqa/isort
     rev: 5.5.4
     hooks:
       - id: isort
         args: ["--profile", "black"]
--   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.790
+-   repo: local
     hooks:
-    -   id: mypy
--   repo: https://gitlab.com/pycqa/flake8.git
-    rev: 3.7.9
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-black>=0.1.1
-        language_version: python3
--   repo: https://github.com/asottile/pyupgrade
-    rev: v2.31.0
-    hooks:
-      - id: pyupgrade
-        args: ["--py37-plus"]
-
--   repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.7.1
-    hooks:
-      - id: reorder-python-imports
-        args: [--py37-plus, --add-import, 'from __future__ import annotations']
--   repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v1.20.0
-    hooks:
-      - id: setup-cfg-fmt
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args:
+          ["src", "-rn"]
