@@ -28,9 +28,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip wheel setuptools
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Lint with flake8
+      - name: Lint with pylint
         run: |
-          flake8 . --count
+          pylint src
       - name: Test with PyTest
         run: |
           pytest -v .
