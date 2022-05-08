@@ -30,6 +30,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
+          images: |
+            SauravMaheshkar/$IMAGE_NAME
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
