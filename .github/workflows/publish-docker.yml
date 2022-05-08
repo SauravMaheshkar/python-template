@@ -31,7 +31,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            name=ghcr.io/sauravmaheshkar/$IMAGE_NAME
+            name=ghcr.io/sauravmaheshkar/python-template-dev
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
