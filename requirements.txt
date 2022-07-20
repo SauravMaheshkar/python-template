@@ -1,5 +1,5 @@
 black==22.6.0
-mypy==0.961
+mypy==0.971
 numpy==1.23.1
 pre-commit==2.20.0
 pylint==2.14.5
