@@ -1,5 +1,5 @@
 # Use an alpine image
-FROM ubuntu:impish-20220531 AS builder
+FROM ubuntu:22.04 AS builder
 
 # metainformation
 LABEL version="0.0.1"
@@ -15,17 +15,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gcc \
 		gfortran \
 		libopenblas-dev \
-		python3 \
+		python3.10 \
 		python3-pip \
-		python3-dev \
-		python3-venv \
+		python3.10-dev \
+		python3.10-venv \
 		&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
-RUN python3 -m venv /opt/venv
+RUN python3.10 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
-RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel isort
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3.10 install --no-cache-dir --upgrade pip setuptools wheel isort
+RUN pip3.10 install --no-cache-dir -r requirements.txt
 
 RUN find /opt/venv/lib/ -follow -type f -name '*.a' -delete \
     && find /opt/venv/lib/ -follow -type f -name '*.pyc' -delete \
@@ -42,12 +42,12 @@ RUN find /opt/venv/lib/ -follow -type f -name '*.a' -delete \
     && find /opt/venv/lib/ -name '__pycache__' | xargs rm -r
 
 # Runner Image
-FROM ubuntu:impish-20220531 AS runner
+FROM ubuntu:22.04 AS runner
 RUN apt update && apt install -y --no-install-recommends \
-		python3 \
+		python3.10 \
 		python3-pip \
-		python3-dev \
-		python3-venv \
+		python3.10-dev \
+		python3.10-venv \
 		&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /opt/venv /opt/venv
