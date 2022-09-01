@@ -1,4 +1,4 @@
-black==22.6.0
+black==22.8.0
 mypy==0.971
 numpy==1.23.2
 pre-commit==2.20.0
