@@ -3,8 +3,12 @@ name: "Build and Tests"
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**.py'
   pull_request:
     branches: [ main ]
+    paths:
+      - '**.py'
   release:
     types: [ created ]
   schedule:
