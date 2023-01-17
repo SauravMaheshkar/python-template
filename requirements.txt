@@ -1,6 +1,6 @@
 black
 mypy>=0.900
-numpy==1.24.1
+numpy
 pre-commit==2.21.0
 pylint>=2.5.0
 pytest>=6.0.0
