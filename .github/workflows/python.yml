@@ -5,10 +5,12 @@ on:
     branches: [ main ]
     paths:
       - '**.py'
+      - 'requirements.txt'
   pull_request:
     branches: [ main ]
     paths:
       - '**.py'
+      - 'requirements.txt'
   release:
     types: [ created ]
   schedule:
