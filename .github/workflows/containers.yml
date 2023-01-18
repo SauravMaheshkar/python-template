@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - '**.py'
+      - 'Containerfile'
   pull_request:
     branches: [main]
     paths:
       - '**.py'
+      - 'Containerfile'
   release:
     types: [created]
 
