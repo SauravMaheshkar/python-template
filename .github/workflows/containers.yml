@@ -36,4 +36,4 @@ jobs:
           image: python-dev
           tags: latest ${{ github.sha }}
           containerfiles: |
-            ./Containerfile
+            .devcontainer/Containerfile
