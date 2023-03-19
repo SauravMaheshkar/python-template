@@ -6,11 +6,13 @@ on:
     paths:
       - "**.py"
       - ".devcontainer/requirements.txt"
+      - ".github/workflows/python.yml"
   pull_request:
     branches: [main]
     paths:
       - "**.py"
       - ".devcontainer/requirements.txt"
+      - ".github/workflows/python.yml"
   release:
     types: [created]
   schedule:
