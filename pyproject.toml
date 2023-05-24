@@ -1,23 +1,12 @@
-[tool.isort]
-profile = "black"
+[tool.ruff]
+select = ["E", "F"]
+line-length = 88
+
+[tool.ruff.isort]
+lines-after-imports = 2
 
 [tool.black]
 line-length = 88
-
-[tool.pylint.messages_control]
-disable = [
-    "no-member",
-    "too-many-arguments",
-    "too-few-public-methods",
-    "no-else-return",
-    "duplicate-code",
-    "too-many-branches",
-    "redefined-builtin",
-    "dangerous-default-value",
-]
-
-[tool.pylint.format]
-max-line-length = 88
 
 [[tool.mypy.overrides]]
 ignore_missing_imports = true

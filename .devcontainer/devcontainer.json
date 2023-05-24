@@ -26,6 +26,7 @@
                 "bungcip.better-toml",
                 "github.copilot",
                 "ms-azuretools.vscode-docker",
+                "charliermarsh.ruff",
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "ms-vscode-remote.remote-containers",
@@ -37,10 +38,7 @@
             ],
             "settings": {
                 "python.analysis.typeCheckingMode": "basic",
-                "python.languageServer": "Jedi",
                 "python.linting.enabled": true,
-                "python.linting.pylintEnabled": true,
-                "python.formatting.provider": "black",
                 "python.testing.pytestArgs": [
                     "tests"
                 ],
@@ -52,7 +50,8 @@
                 "editor.formatOnSave": true,
                 "editor.inlineSuggest.enabled": true,
                 "editor.codeActionsOnSave": {
-                    "source.organizeImports": true
+                    "source.organizeImports": true,
+                    "source.fixAll": true
                 },
                 "workbench.editorAssociations": {
                     "*.ipynb": "jupyter-notebook"
