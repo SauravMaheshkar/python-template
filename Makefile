@@ -10,6 +10,7 @@ clean:
 	find . -type f -name "__pycache__" -delete
 	rm -rf .mypy_cache/
 	rm -rf .pytest_cache/
+	rm -rf .ruff_cache/
 
 ## Testing
 test:
@@ -18,6 +19,5 @@ test:
 ## Basic linting
 lint:
 	black src
-	isort src --profile=black
+	ruff check src
 	mypy src
-	pylint src
