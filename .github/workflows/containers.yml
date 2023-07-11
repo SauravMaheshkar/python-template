@@ -18,6 +18,17 @@ jobs:
   build_cache_buildx:
     runs-on: ubuntu-latest
     steps:
+      - name: Cleanup disk
+        run: |
+          sudo ls -l /usr/local/lib/
+          sudo ls -l /usr/share/
+          sudo du -sh /usr/local/lib/
+          sudo du -sh /usr/share/
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+          sudo du -sh /usr/local/lib/
+          sudo du -sh /usr/share/
+
       - name: Checkout
         uses: actions/checkout@v3
 
