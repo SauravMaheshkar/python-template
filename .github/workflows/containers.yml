@@ -1,16 +1,10 @@
 name: Containers CI
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "**.py"
-      - ".devcontainer/Containerfile"
-  pull_request:
-    branches: [main]
-    paths:
-      - "**.py"
-      - ".devcontainer/Containerfile"
+  workflow_run:
+    workflows: [Build and Tests]
+    types:
+      - completed
   release:
     types: [created]
 
