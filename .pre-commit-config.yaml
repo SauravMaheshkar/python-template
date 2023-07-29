@@ -10,6 +10,14 @@ repos:
       - id: check-merge-conflict
       - id: requirements-txt-fixer
       - id: detect-private-key
+  - repo: https://github.com/fredrikaverpil/creosote
+    rev: v2.6.3
+    hooks:
+      - id: creosote
+        args:
+          - --venv=venv
+          - --paths=src
+          - --deps-file=.devcontainer/requirements.txt
   - repo: https://github.com/psf/black
     rev: 23.7.0
     hooks:
