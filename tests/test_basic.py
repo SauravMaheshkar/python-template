@@ -1,4 +1,5 @@
 """Basic test to always pass"""
+
 from __future__ import annotations
 
 
