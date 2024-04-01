@@ -43,7 +43,7 @@ jobs:
           python -m uv pip install -r .devcontainer/requirements.txt
       - name: Ruff
         run: |
-          ruff check src
+          python -m ruff check src
       - name: Test with PyTest
         run: |
-          pytest -v .
+          python -m pytest -v .
