@@ -1,8 +1,10 @@
 [tool.ruff]
-select = ["E", "F"]
 line-length = 90
 
-[tool.ruff.isort]
+[tool.ruff.lint]
+select = ["E", "F"]
+
+[tool.ruff.lint.isort]
 lines-after-imports = 2
 
 [tool.black]
