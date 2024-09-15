@@ -1,3 +1,20 @@
+[project]
+name = "acme"
+version = "0.0.1"
+description = "python template"
+readme = ".github/README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "black",
+    "mypy>=0.900",
+    "numpy>=1.22.0",
+    "pre-commit>=2.18.0",
+    "pytest>=6.0.0",
+    "ruff",
+    "scipy>=1.10.0",
+]
+
 [tool.ruff]
 line-length = 90
 
@@ -9,9 +26,6 @@ lines-after-imports = 2
 
 [tool.black]
 line-length = 88
-
-[[tool.mypy.overrides]]
-ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

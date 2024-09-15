@@ -1,2 +1,5 @@
-# python-template
-General Purpose Repository Template for Python Projects
+## Getting started
+
+```bash
+uv sync
+```
