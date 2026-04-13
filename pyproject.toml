@@ -6,7 +6,7 @@ readme = ".github/README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 dependencies = [
-    "pytest>=6.0.0",
+    "pytest>=9.0.3",
     "ruff",
 ]
 
